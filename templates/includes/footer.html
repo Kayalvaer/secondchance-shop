@@ -1,0 +1,45 @@
+    <!-- =========================  FOOTER SECTION  ========================= -->
+<footer class="section-footer border-top">
+	<div class="container">
+        <div class="col-sm-12 text-center">
+            <h3 class="uppercase mb-3 mt-3">Contact Us</h3>
+                <div class="mb-5">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener" class="mr-4"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener" class="mr-4"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com" target="_blank" rel="noopener" class="mr-4"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.pinterest.com" target="_blank" rel="noopener"><i class="fab fa-pinterest"></i></a>
+                </div>
+        </div>        
+		<section class="footer-bottom border-top row mb-4">
+			<div class="col-md-2 mt-4">
+				<p class="text-muted">SecondChance AS &copy 2019</p>
+			</div>
+			<div class="col-md-8 text-md-center mt-4">
+				<span  class="px-2"><a href="mailto:decarbonify.com" class="mr-3"><i class="fas fa-at mr-2"></i>secondchance@example.no</a></span>
+				<span  class="px-2"><a href="tel:5555555"><i class="fas fa-mobile-alt mr-2"></i>5555 5555</a></span>
+				<span  class="px-2"><i class="fas fa-map-marker-alt mr-2"></i>Street name 444, Park avenue</span>
+                <div class="row">
+                    <div class="col-12 text-center footer-col">
+                        <small>Kay Alvaer&copy; 2021</small>
+                    </div>
+                </div>
+			</div>
+
+			<div class="col-md-2 text-md-right text-muted mt-4">
+				<i class="fab fa-lg fa-cc-visa"></i>
+				<i class="fab fa-lg fa-cc-paypal"></i>
+				<i class="fab fa-lg fa-cc-mastercard"></i>
+			</div>
+		</section>
+	</div><!-- //container -->
+<!-- ========================= FOOTER SECTION END  ========================= -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('.thumb a').click(function(e){
+			e.preventDefault();
+			$('.mainImage img').attr('src', $(this).attr("href"));
+		})
+	})
+</script>
+</footer>
