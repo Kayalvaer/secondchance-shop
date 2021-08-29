@@ -442,7 +442,7 @@ p:last-child {
 
 .branding-content .logo, .navbar-brand .logo {
   margin-right: 7px;
-  max-height: 42px;
+  max-height: 180px;
   display: inline-block;
 }
 
@@ -561,6 +561,19 @@ p:last-child {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+/* customise btn-primary */
+.btn-main {
+  color: white;
+  background-color: #8a7406 !important;
+}
+
+.btn-outline-main {
+  border: #dc6b08cc;
+}
+
+
+/* customise socialmedia-primary */
 
 .btn-facebook {
   background-color: #405D9D;
@@ -869,22 +882,22 @@ a[class*=card]:hover .title {
 }
 
 /* GRID STYLE PRODUCT ITEM */
-.card-product-grid {
+.card-item-grid{
   margin-bottom: 20px;
 }
-.card-product-grid .img-wrap {
+.card-item-grid.img-wrap {
   border-radius: 0.2rem 0.2rem 0 0;
   height: 220px;
 }
-.card-product-grid .product-info {
+.card-item-grid.product-info {
   overflow: hidden;
   padding: 18px 20px;
 }
-.card-product-grid .bottom-wrap {
+.card-item-grid.bottom-wrap {
   padding: 18px;
   border-top: 1px solid #e4e4e4;
 }
-.card-product-grid .topbar {
+.card-item-grid .topbar {
   position: absolute;
   top: 0;
   width: 100%;
@@ -893,17 +906,17 @@ a[class*=card]:hover .title {
   text-align: initial;
   padding: 10px 15px;
 }
-.card-product-grid .topbar a {
+.card-item-grid .topbar a {
   color: #ccc;
 }
-.card-product-grid .topbar a:hover {
+.card-item-grid .topbar a:hover {
   color: #3167eb;
 }
-.card-product-grid .fix-height {
+.card-item-grid .fix-height {
   height: 80px;
   overflow: hidden;
 }
-.card-product-grid .btn-overlay {
+.card-item-grid .btn-overlay {
   transition: 0.5s;
   opacity: 0;
   left: 0;
@@ -915,15 +928,15 @@ a[class*=card]:hover .title {
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
 }
-.card-product-grid:hover .btn-overlay {
+.card-item-grid:hover .btn-overlay {
   opacity: 1;
 }
-.card-product-grid:hover {
+.card-item-grid:hover {
   box-shadow: 0 4px 15px rgba(153, 153, 153, 0.3);
   transition: 0.3s;
 }
 
-.item-slide .card-product-grid {
+.item-slide .card-item-grid {
   margin-bottom: 0;
 }
 

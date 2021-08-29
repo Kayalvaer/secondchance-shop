@@ -85,13 +85,13 @@
         <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-2 col-md-3 col-6">
-          <a href="./" class="branding-content">
-            <img class="logo" src="./images/logo.png">
+          <a href="#" class="branding-content">
+            <img class="logo" src="{% static './images/logo.png' %}">
           </a> <!-- branding-Content.// -->
         </div>
         <div class="col-lg col-sm col-md col-6 flex-grow-0">
           <div class="category-container dropdown d-inline-block float-right">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"> 
               <i class="fa fa-sort-amount-down mr-2"></i> All category 
             </button>
             <div class="dropdown-menu">
@@ -104,14 +104,13 @@
             </div>
           </div>  <!-- category-container.// -->
         </div> <!-- col.// -->
-        <a href="./shop.html" class="btn btn-outline-primary">Shop</a>
+        <a href="./shop.html" class="btn btn-outline-info">Shop</a>
         <div class="col-lg  col-md-6 col-sm-12 col">
-          <form action="#" class="form-inline my-2 my-lg-0 search" name="q">
+          <form method="GET"  action="" class="form-inline my-2 my-lg-0 search">
             <div class="input-group w-100">
-                <input type="text" class="form-control" style="width:60%;" placeholder="Search" aria-label="Search">
-                
+                <input type="text" class="form-control" style="width:60%;" name="q" placeholder="Search" aria-label="Search">
                 <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit">
+                  <button class="form-control btn btn-info" type="submit">
                     <i class="fa fa-search"></i>
                   </button>
                 </div>
@@ -122,16 +121,42 @@
               <div class="d-flex justify-content-end mb-3 mb-lg-0">
                 <div class="account-header">
                   <small class="title text-muted">Welcome guest!</small>
-                  <div> 
-                    <a href="./signin.html">Sign in</a> <span class="dark-version"> | </span>
-                    <a href="./register.html"> Register</a>
+                  <div>
+                    <li class="list-inline-item dropdown">
+                      <a href="./signin.html" class="navlink" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="text-center"><i class="fas fa-user"></i></div>
+                        <p class="my-0">My Account</p>
+                      </a> 
+                      <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                <a href="" class="dropdown-item">Product Management</a>
+                            {% endif %}
+                            <a href="" class="dropdown-item">My Profile</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                        {% else %}
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                        {% endif %}
+                      </div>
+                    </li> 
+                    <span class="dark-version"> | </span>
+                    <li class="list-inline-item dropdown">
+                      <a href="./cart.html" class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link">
+                        <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
+                        <span class="signage signage-pill signage-danger notify">
+                          {% if grand_total %}
+                              ${{ grand_total|floatformat:2 }}
+                          {% else %}
+                              $0.00
+                          {% endif %}
+                        </span>
+                        <p class="my-0">Cart</p>
+                      </a>
+                    </li>
                   </div>
                 </div>
-                <a href="./cart.html" class="account-header pl-3 ml-3">
-                  <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
-                  <span class="signage signage-pill signage-danger notify">0</span>
-                </a>
-              </div> <!-- widgets-wrap.// -->
+              </div> <!-- accounts-wrap.// -->
             </div> <!-- col.// -->
       </div> <!-- row.// -->
         </div> <!-- container.// -->
@@ -145,10 +170,10 @@
       
       <!-- ========================= SECTION MAIN ========================= -->
       <section class="hero-intro padding-y-sm">
-      <div class="container">
+      <div class="container-fluid">
       
       <div class="hero-wrapper">
-        <img src="images/banners/1.jpg" class="img-fluid rounded">
+        <img src="{% static './images/banners/cover2.jpg' %}" class="img-fluid rounded">
       </div>
       
       </div> <!-- container //  -->
@@ -160,14 +185,14 @@
       <div class="container">
       
       <header class="section-heading">
-        <a href="./store.html" class="btn btn-outline-primary float-right">See all</a>
+        <a href="./store.html" class="btn btn-outline-info float-right">See all</a>
         <h3 class="section-title">Popular products</h3>
       </header><!-- sect-heading -->
       
       <div class="row">
         <div class="col-md-3">
           <div class="card card-item-grid">
-            <a href="./product-detail.html" class="img-wrap"> <img src="images/items/1.jpg"> </a>
+            <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/item2.jpg' %}"> </a>
             <figcaption class="product-info">
               <a href="./product-detail.html" class="title">Product name</a>
               <div class="cost mt-1">$79.00</div> <!-- cost-wrap.// -->
@@ -176,7 +201,7 @@
         </div> <!-- col.// -->
         <div class="col-md-3">
           <div class="card card-item-grid">
-            <a href="./product-detail.html" class="img-wrap"> <img src="images/items/2.jpg"> </a>
+            <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/item12a.jpg' %}"> </a>
             <figcaption class="product-info">
               <a href="./product-detail.html" class="title">Product name</a>
               <div class="cost mt-1">$50.00</div> <!-- cost-wrap.// -->
@@ -185,7 +210,7 @@
         </div> <!-- col.// -->
         <div class="col-md-3">
           <div class="card card-item-grid">
-            <a href="./product-detail.html" class="img-wrap"> <img src="images/items/3.jpg"> </a>
+            <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/item11.jpg' %}"> </a>
             <figcaption class="product-info">
               <a href="./product-detail.html" class="title">Product name</a>
               <div class="cost mt-1">$56.00</div> <!-- cost-wrap.// -->
@@ -194,7 +219,7 @@
         </div> <!-- col.// -->
         <div class="col-md-3">
           <div class="card card-item-grid">
-            <a href="./product-detail.html" class="img-wrap"> <img src="images/items/4.jpg"> </a>
+            <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/4.jpg' %}"> </a>
             <figcaption class="product-info">
               <a href="./product-detail.html" class="title">Product name</a>
               <div class="cost mt-1">$1o9.00</div> <!-- cost-wrap.// -->
@@ -203,7 +228,7 @@
         </div> <!-- col.// -->
         <div class="col-md-3">
           <div class="card card-item-grid">
-            <a href="./product-detail.html" class="img-wrap"> <img src="images/items/5.jpg"> </a>
+            <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/shoe9.jpg' %}"> </a>
             <figcaption class="product-info">
               <a href="./product-detail.html" class="title">Product name</a>
               <div class="cost mt-1">$123.00</div> <!-- cost-wrap.// -->
@@ -212,7 +237,7 @@
         </div> <!-- col.// -->
         <div class="col-md-3">
           <div class="card card-item-grid">
-            <a href="./product-detail.html" class="img-wrap"> <img src="images/items/6.jpg"> </a>
+            <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/3.jpg' %}"> </a>
             <figcaption class="product-info">
               <a href="./product-detail.html" class="title">Product name</a>
               <div class="cost mt-1">$43.00</div> <!-- cost-wrap.// -->
@@ -221,7 +246,7 @@
         </div> <!-- col.// -->
         <div class="col-md-3">
           <div class="card card-item-grid">
-            <a href="./product-detail.html" class="img-wrap"> <img src="images/items/7.jpg"> </a>
+            <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/7.jpg' %}"> </a>
             <figcaption class="product-info">
               <a href="./product-detail.html" class="title">Product name</a>
               <div class="cost mt-1">$56.00</div> <!-- cost-wrap.// -->
@@ -230,7 +255,7 @@
         </div> <!-- col.// -->
         <div class="col-md-3">
           <div class="card card-item-grid">
-            <a href="./product-detail.html" class="img-wrap"> <img src="images/items/9.jpg"> </a>
+            <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/shoe5.jpg' %}"> </a>
             <figcaption class="product-info">
               <a href="./product-detail.html" class="title">Product name</a>
               <div class="cost mt-1">$49.00</div> <!-- cost-wrap.// -->
