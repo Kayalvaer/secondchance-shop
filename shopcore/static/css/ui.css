@@ -444,6 +444,7 @@ p:last-child {
   margin-right: 7px;
   max-height: 180px;
   display: inline-block;
+  width: fit-content;
 }
 
 .navbar-main .nav-link {
@@ -476,8 +477,8 @@ p:last-child {
 }
 .account-header .notify {
   position: absolute;
-  top: -3px;
-  right: -10px;
+  top: -7px;
+  right: -20px;
 }
 .account-header:hover i {
   color: #3167eb;
@@ -569,7 +570,18 @@ p:last-child {
 }
 
 .btn-outline-main {
-  border: #dc6b08cc;
+  border: #dc6b08cc !important;
+  background-color: #ffffff;
+}
+
+.btn-outline-orange {
+  border: #dc6b08cc !important;
+  background-color: #ffffff;
+}
+
+.btn-orange {
+  color: #000;
+  background-color: #dc6b08cc !important;
 }
 
 
@@ -885,15 +897,16 @@ a[class*=card]:hover .title {
 .card-item-grid{
   margin-bottom: 20px;
 }
-.card-item-grid.img-wrap {
+.card-item-grid .img-wrap {
   border-radius: 0.2rem 0.2rem 0 0;
-  height: 220px;
+  height: 80%;
+  width: fit-content;
 }
-.card-item-grid.product-info {
+.card-item-grid .product-info {
   overflow: hidden;
   padding: 18px 20px;
 }
-.card-item-grid.bottom-wrap {
+.card-item-grid .bottom-wrap {
   padding: 18px;
   border-top: 1px solid #e4e4e4;
 }
@@ -1453,11 +1466,16 @@ a[class*=card]:hover .title {
   width: 1.5rem;
 } 
 
+/* page-header style */
+.bg-page-contact {
+  background-color: #b39604;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
-/* @media (min-width: 1200px) {
+@media (min-width: 1200px) {
   .container {
     max-width: 80%;
   }
-}  */
+}  
