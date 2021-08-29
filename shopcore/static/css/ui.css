@@ -41,7 +41,7 @@ a:hover {
   display: inline-block;
 }
 
-.price-wrap {
+.cost-wrap {
   letter-spacing: -0.7px;
 }
 
@@ -434,13 +434,13 @@ p:last-child {
   color: #212529;
 }
 
-.header-main {
+.header-content {
   position: relative;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.brand-wrap .logo, .navbar-brand .logo {
+.branding-content .logo, .navbar-brand .logo {
   margin-right: 7px;
   max-height: 42px;
   display: inline-block;
@@ -454,62 +454,62 @@ p:last-child {
   color: #666;
 }
 
-.widget-header {
+.account-header {
   display: inline-block;
   vertical-align: middle;
   position: relative;
 }
-.widget-header a {
+.account-header a {
   color: #343a40;
 }
-.widget-header a:hover {
+.account-header a:hover {
   color: #3167eb;
 }
-.widget-header i {
+.account-header i {
   color: #969696;
 }
-.widget-header form {
+.account-header form {
   min-width: 280px;
 }
-.widget-header .title {
+.account-header .title {
   display: block;
 }
-.widget-header .notify {
+.account-header .notify {
   position: absolute;
   top: -3px;
   right: -10px;
 }
-.widget-header:hover i {
+.account-header:hover i {
   color: #3167eb;
 }
 
 /* desktop only */
 /* desktop only .end */
 /* ================ SECTION-FOOTER ==================  */
-.section-footer ul li {
+.footer-info ul li {
   margin-bottom: 5px;
 }
-.section-footer ul a {
+.footer-info ul a {
   color: inherit;
 }
-.section-footer ul a:hover {
+.footer-info ul a:hover {
   color: #3167eb;
 }
-.section-footer .logo-footer {
+.footer-info .logo-footer {
   height: 40px;
 }
-.section-footer .title {
+.footer-info .title {
   font-weight: 600;
   margin-bottom: 16px;
   color: #212529;
 }
 
-.footer-bottom {
+.bottom-footer {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-.footer-copyright {
+.copyright-footer {
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -840,19 +840,19 @@ a[class*=card]:hover .title {
 }
 
 /* BASE STYLE FOR PRODUCT ITEM */
-[class*=card-product] a.title {
+[class*=card-item] a.title {
   color: #212529;
   display: block;
 }
-[class*=card-product] a.title:hover {
+[class*=card-item] a.title:hover {
   color: #3167eb;
 }
-[class*=card-product] .badge {
+[class*=card-item] .signage {
   top: 10px;
   left: 10px;
   position: absolute;
 }
-[class*=card-product] p {
+[class*=card-item] p {
   margin-bottom: 0;
 }
 [class*=card-product] .img-wrap {
@@ -876,7 +876,7 @@ a[class*=card]:hover .title {
   border-radius: 0.2rem 0.2rem 0 0;
   height: 220px;
 }
-.card-product-grid .info-wrap {
+.card-product-grid .product-info {
   overflow: hidden;
   padding: 18px 20px;
 }
@@ -1071,12 +1071,12 @@ a[class*=card]:hover .title {
   background-color: #fa3434;
 }
 
-.price {
+.cost {
   font-weight: 600;
   color: #212529;
 }
 
-.price-old {
+.cost-old {
   color: #969696;
   margin-left: 3px;
   font-size: 85%;
@@ -1416,35 +1416,35 @@ a[class*=card]:hover .title {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
-.table-shopping-cart .price-wrap {
+.table-shopping-cart .cost-wrap {
   line-height: 1.2;
 }
-.table-shopping-cart .price {
+.table-shopping-cart .cost {
   font-weight: bold;
   margin-right: 5px;
   display: block;
 }
 
 /*# sourceMappingURL=ui.css.map */
-html {
+/* html {
   height: 100%;
-}
+}  */
 
 
 /* from Bulma */
-.icon {
+ .icon {
   align-items: center;
   display: inline-flex;
   justify-content: center;
   height: 1.5rem;
   width: 1.5rem;
-}
+} 
 
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .container {
     max-width: 80%;
   }
-}
+}  */
