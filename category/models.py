@@ -15,9 +15,9 @@ class Category(models.Model):
         max_length=2000, null=True, blank=True)
     image = models.ImageField(upload_to='photos/categories', null=True, blank=True)
 
-#   class Meta:
-#       verbose_name = 'category'
-#        verbose_name_plural = 'categories'
+    class Meta:
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
 
 #    def get_url(self):
 #            return reverse('products_by_category', args=[self.slug])
