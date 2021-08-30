@@ -337,12 +337,23 @@ article:after,
   transition: 0.5s;
 }
 
-.bg-pattern {
+.bg-gradient-purple {
+  background: rgba(33, 37, 41, 0.4);
+  /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  /* For Opera 11.1 to 12.0 */
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, rgba(72, 2, 42, 0.9), rgba(13, 122, 152, 0.4));
+  /* Standard syntax */
+  transition: 0.5s;
+}
+
+/* .bg-pattern {
   background-image: url(../images/banners/bg-pattern.svg), linear-gradient(135deg, #3167eb, #545454);
   background-size: cover, auto;
   background-repeat: no-repeat, repeat;
   background-position: 0px 0px, 50% 50%;
-}
+} */
 
 .bg-img {
   overflow: hidden;
@@ -442,8 +453,8 @@ p:last-child {
 
 .header-content {
   position: relative;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  /* padding-top: 1rem;
+  padding-bottom: 1rem; */
 }
 
 .branding-content .logo, .navbar-brand .logo {
@@ -1474,7 +1485,11 @@ a[class*=card]:hover .title {
 
 /* page-header style */
 .bg-page-contact {
-  background-color: #b39604;
+  background: linear-gradient(to bottom right, rgba(179, 150, 4, 0.9), rgba(108, 2, 62, 0.9));
+  color: #ffffff !important;
+  opacity: 1;
+  /* background-color: rgb(179, 150, 4); */ 
+
 }
 
 /* -------------------------------- Media Queries */

@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'coreapps',
-    'category'
+    'category',
+    'accounts',
+    'stock',
 ]
 
 MIDDLEWARE = [
@@ -99,6 +101,7 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'shopcore.wsgi.application'
 
+AUTH_USER_MODEL = 'accounts.Account'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
