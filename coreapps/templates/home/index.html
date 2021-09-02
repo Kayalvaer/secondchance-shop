@@ -4,103 +4,36 @@
 {% block content %}
 
  <!-- ========================= SECTION MAIN ========================= -->
- <section class="hero-intro padding-y-sm">
-    <div class="container-fluid">
+<section class="hero-intro padding-y-sm">
+  <div class="container-fluid">
+    <div class="hero-wrapper"></div>
+  </div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
     
-    <div class="hero-wrapper">
-      
-    </div>
-    
-    </div> <!-- container //  -->
-    </section>
-    <!-- ========================= SECTION MAIN END// ========================= -->
-    
-    <!-- ========================= SECTION  ========================= -->
-    <section class="section-name padding-y-sm">
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y-sm">
     <div class="container">
+      <header class="section-heading">
+        <a href="{% url 'stock' %}" class="btn btn-outline-info float-right">View all</a>
+        <h3 class="section-title">Popular products</h3>
+      </header><!-- sect-heading -->
     
-    <header class="section-heading">
-      <a href="./store.html" class="btn btn-outline-info float-right">See all</a>
-      <h3 class="section-title">Popular products</h3>
-    </header><!-- sect-heading -->
-    
-    <div class="row">
-      <div class="col-md-3">
-        <div class="card card-item-grid">
-          <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/item2.jpg' %}"> </a>
-          <figcaption class="product-info">
-            <a href="./product-detail.html" class="title">Product name</a>
-            <div class="cost mt-1">$79.00</div> <!-- cost-wrap.// -->
-          </figcaption>
-        </div>
-      </div> <!-- col.// -->
-      <div class="col-md-3">
-        <div class="card card-item-grid">
-          <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/item12a.jpg' %}"> </a>
-          <figcaption class="product-info">
-            <a href="./product-detail.html" class="title">Product name</a>
-            <div class="cost mt-1">$50.00</div> <!-- cost-wrap.// -->
-          </figcaption>
-        </div>
-      </div> <!-- col.// -->
-      <div class="col-md-3">
-        <div class="card card-item-grid">
-          <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/item11.jpg' %}"> </a>
-          <figcaption class="product-info">
-            <a href="./product-detail.html" class="title">Product name</a>
-            <div class="cost mt-1">$56.00</div> <!-- cost-wrap.// -->
-          </figcaption>
-        </div>
-      </div> <!-- col.// -->
-      <div class="col-md-3">
-        <div class="card card-item-grid">
-          <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/4.jpg' %}"> </a>
-          <figcaption class="product-info">
-            <a href="./product-detail.html" class="title">Product name</a>
-            <div class="cost mt-1">$1o9.00</div> <!-- cost-wrap.// -->
-          </figcaption>
-        </div>
-      </div> <!-- col.// -->
-      <div class="col-md-3">
-        <div class="card card-item-grid">
-          <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/shoe9.jpg' %}"> </a>
-          <figcaption class="product-info">
-            <a href="./product-detail.html" class="title">Product name</a>
-            <div class="cost mt-1">$123.00</div> <!-- cost-wrap.// -->
-          </figcaption>
-        </div>
-      </div> <!-- col.// -->
-      <div class="col-md-3">
-        <div class="card card-item-grid">
-          <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/3.jpg' %}"> </a>
-          <figcaption class="product-info">
-            <a href="./product-detail.html" class="title">Product name</a>
-            <div class="cost mt-1">$43.00</div> <!-- cost-wrap.// -->
-          </figcaption>
-        </div>
-      </div> <!-- col.// -->
-      <div class="col-md-3">
-        <div class="card card-item-grid">
-          <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/7.jpg' %}"> </a>
-          <figcaption class="product-info">
-            <a href="./product-detail.html" class="title">Product name</a>
-            <div class="cost mt-1">$56.00</div> <!-- cost-wrap.// -->
-          </figcaption>
-        </div>
-      </div> <!-- col.// -->
-      <div class="col-md-3">
-        <div class="card card-item-grid">
-          <a href="./product-detail.html" class="img-wrap"> <img src="{% static 'images/items/shoe5.jpg' %}"> </a>
-          <figcaption class="product-info">
-            <a href="./product-detail.html" class="title">Product name</a>
-            <div class="cost mt-1">$49.00</div> <!-- cost-wrap.// -->
-          </figcaption>
-        </div>
-      </div> <!-- col.// -->
-    </div> <!-- row.// -->
-    
+      <div class="row">
+        {% for product in products %}
+        <div class="col-md-3">
+          <div class="card card-item-grid">
+            <a href="{{ product.get_url }}" class="img-wrap"> <img src="{{ product.images.url }}"> </a>
+            <figcaption class="product-info">
+              <a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
+              <div class="cost mt-1">{{ product.price }}</div> <!-- cost-wrap.// -->
+            </figcaption>
+          </div>
+        </div> <!-- col.// -->
+        {% endfor %}
+      </div> <!-- row.// -->
     </div><!-- container // -->
-    </section>
+</section>
     <!-- ========================= SECTION  END// ========================= -->
     
 {% endblock %}
