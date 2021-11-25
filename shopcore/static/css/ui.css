@@ -39,8 +39,9 @@ a:hover {
   display: block;
 }
 .img-wrap img {
-  max-width: 100%;
-  height: 400px;
+  width: 18vw;
+  height: 16vw;
+  object-fit: cover;
 }
 
 .icon-wrap {
@@ -112,7 +113,7 @@ a:hover {
 
 .img-md {
   width: 140px;
-  height: 80%;
+  height: 140px;
 }
 
 .img-lg {
